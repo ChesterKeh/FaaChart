@@ -1,18 +1,16 @@
-
-
 # User Story
 
 As a user,
-I want to be able to view flight charts for differen't airports,
-So that I can plan my flight routes and navigate safely.
+I want to be able to navigate the process of buying a plane ticket,
+So that I can book my flights efficiently and conveniently.
 
 Acceptance Criteria:
 
-- The application should provide a search functionality to find specific flight charts.
-- The application should display flight charts with accurate and up-to-date information.
-- The application should allow users to zoom in and out of the flight charts for better visibility.
-- The application should provide a legend or key to understand the symbols and markings on the flight charts.
-- The application should support different types of flight charts, such as sectional charts, terminal area charts, and enroute charts.
-- The application should be accessible and user-friendly, with intuitive navigation and controls.
-
-api key - 11cf52b0e24e20b9f7df637f5692dfc4
+- The application should provide a search functionality to find available flights based on the user's preferences.
+- The application should display accurate and up-to-date flight information, including departure and arrival times, airlines, and ticket prices.
+- The application should allow users to filter and sort the available flights based on criteria such as price, duration, and airline.
+- The application should provide a secure and user-friendly payment process for purchasing the selected flight tickets.
+- The application should send confirmation emails or notifications to users after successful ticket purchases.
+- The application should provide options for users to view and manage their booked flights, including the ability to make changes or cancellations if necessary.
+- The application should have a responsive design that works well on different devices, such as desktops, tablets, and smartphones.
+- The application should provide customer support or assistance options in case users encounter any issues or have questions during the ticket buying process.

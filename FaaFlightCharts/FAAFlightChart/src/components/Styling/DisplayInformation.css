@@ -1,0 +1,84 @@
+#Planeticket {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    width: 300px;
+}
+
+#Planeticket::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f5f5f5;
+}
+
+#Planeticket::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f5f5f5;
+}
+
+
+#Planeticket .ticket-id {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#Planeticket .airline-codes {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#Planeticket .departure-time,
+#Planeticket .duration,
+#Planeticket .departure-airport-code,
+#Planeticket .arrival-airport-code,
+#Planeticket .departure-date,
+#Planeticket .arrival-date {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+#Planeticket .departure-airport-code::after {
+    content: " → ";
+    margin: 0 5px;
+}
+
+#Planeticket .departure-airport-code::after,
+#Planeticket .arrival-airport-code {
+    display: inline-block;
+}
+
+
+#planebox {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    /* Added height property to make it a rectangle */
+}

@@ -3,6 +3,10 @@ import React from "react";
 export function InputBar() {
   return (
     <>
+      <h1>LazyRocket Ticket</h1>
+      <hr />
+      <p>Where would you like to go?</p>
+
       <header style={{ display: "flex", justifyContent: "center" }}>
         <form
           action="text"
@@ -34,6 +38,9 @@ export function InputBar() {
           <button>Search</button>
         </form>
       </header>
+      <br />
+      <hr />
+      <h5>Temporary Place holder for plane ticket</h5>
     </>
   );
 }
