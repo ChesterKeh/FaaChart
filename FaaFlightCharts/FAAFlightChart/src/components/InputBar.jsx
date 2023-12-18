@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Styling/InputBar.css";
 
-export function InputBar() {
+export function InputBar({ onSearch }) {
   const [airline, setAirline] = useState("");
   const [airport, setAirport] = useState("");
   const [date, setDate] = useState("");
@@ -29,6 +29,10 @@ export function InputBar() {
     e.preventDefault();
     // Store the user input here
     console.log(airline, airport, date);
+  };
+
+  const handleSearch = () => {
+    onSearch(userInput);
   };
 
   return (
@@ -68,61 +72,14 @@ export function InputBar() {
               .split("T")[0]
           }
         />
-        <button type="submit">Search Flight</button>
+        <button
+          type="submit"
+          onClick={handleSearch}
+        >
+          Search Flight
+        </button>
       </form>
       <hr />
     </>
   );
 }
-
-// const UserInputComponent = ({ id, name, initialValue, label }) => {
-//   const [inputValue, setInputValue] = useState(initialValue);
-
-//   const handleInputChange = (e) => {
-//     setInputValue(e.target.value);
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Store the user input here
-//     console.log(inputValue);
-//   };
-
-// return (
-//   <>
-//     <h1>LazyPlane Tracker</h1>
-//     <hr />
-//     <p>Where would you like to go?</p>
-
-//     <header style={{ display: "flex", justifyContent: "center" }}>
-//       <form
-//         action="text"
-//         style={{ display: "flex", flexDirection: "row" }}
-//         onSubmit={handleSubmit}
-//       >
-//         <input
-//           type="text"
-//           id="fname"
-//           airline={inputValue}
-//           onChange={handleInputChange}
-//           style={{ marginRight: "10px" }}
-//         />
-//         <select
-//           id="currency"
-//           name="currency"
-//           style={{ marginRight: "10px" }}
-//           value={inputValue}
-//           onChange={handleInputChange}
-//         >
-//           <option>---Pick an airport---</option>
-//           <option value="SGN">Ho Chi Minh City </option>
-//           <option value="HAN">Hanoi</option>
-//         </select>
-//         <button type="submit">Search</button>
-//       </form>
-//     </header>
-//     <br />
-//     <hr />
-//     <h5>Temporary Place holder for plane ticket</h5>
-//   </>
-// );
