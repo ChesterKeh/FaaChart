@@ -15,7 +15,7 @@ export function FlightTicketInformation(props) {
   } = props;
 
   const tempId = "ABC123";
-  const tempAirlineCodes = "XYZ";
+  const tempAirlineCodes = "SIA";
   const tempDepartureTime = "12:00 PM";
   const tempDuration = "2 hours";
   const tempDepartureAirportCode = "JFK";
