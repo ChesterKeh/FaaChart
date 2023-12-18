@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { InputBar } from "./components/InputBar";
 import { FlightTicketInformation } from "./components/PlaneTicket/FlightTicketInformation";
 import "./App.css";
+import { DepartureData } from "./components/DepartureData";
 
 function App() {
   const [flightData, setFlightData] = useState([]);
@@ -24,17 +25,20 @@ function App() {
   //   makeApiCall();
   // }, []);
 
-  useEffect(() => {
-    const fetchFlightInfo = async function fetchFlightInformation() {
-      const response = await fetch("http://localhost:5173/db.json");
-      const flightData = await response.json();
-      log("%o", flightData);
-      setFlightData(flightData);
-    };
-    fetchFlightInfo();
+  let apiLimit = new URLSearchParams({
+    access_key: "11cf52b0e24e20b9f7df637f5692dfc4",
+    limit: 10,
   });
+  const apiLink = "http://api.aviationstack.com/v1/flights?";
 
-  
+  console.log(apiLink); // Add this line to log the apiLink
+
+  useEffect(() => {
+    fetch(`http://api.aviationstack.com/v1/flights?${apiLimit}`)
+      .then((response) => response.json())
+      .then(console.log);
+  }, []);
+
   return (
     <>
       <InputBar />

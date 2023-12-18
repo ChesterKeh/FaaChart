@@ -1,0 +1,23 @@
+#flight {
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+    height: 30px;
+    width: 200px;
+}
+
+#airline {
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    height: 30px;
+    width: 200px;
+}
+
+#date {
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    height: 30px;
+    width: 200px;
+}

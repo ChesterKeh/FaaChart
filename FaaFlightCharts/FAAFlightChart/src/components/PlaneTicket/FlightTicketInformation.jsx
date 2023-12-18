@@ -1,17 +1,22 @@
 import { useRef } from "react";
-import { TicketPrice } from "./TicketPrice";
 import "../Styling/DisplayInformation.css";
 
 export function FlightTicketInformation(props) {
   const {
-    id,
-    airlineCodes,
-    departureTime,
-    departureDate,
-    duration,
-    departureAirportCode,
-    arrivalAirportCode,
-    arrivalDate,
+    flight_date,
+    flight_status,
+    depature,
+    airport,
+    timezone,
+    icao,
+    terminal,
+    gate,
+    delay,
+    scheduled,
+    estimated,
+    actual,
+    estimated_runway,
+    actual_runway,
   } = props;
 
   const tempId = "ABC123";
@@ -36,7 +41,6 @@ export function FlightTicketInformation(props) {
           <p className="departure-date">{tempDepartureDate}</p>
           <p className="arrival-date">{tempArrivalDate}</p>
         </div>
-        <TicketPrice />
       </div>
       <p className="read-the-docs">
         Welcome to get your FlightCharts & maybe out of date
