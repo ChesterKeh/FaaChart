@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { InputBar } from "./InputBar";
-import axios from "axios";
 
 export function DepartureData({ userInput }) {
   //   const {
@@ -35,18 +34,6 @@ export function DepartureData({ userInput }) {
       .then((response) => response.json())
       .then(console.log);
   }, []);
-
-  useInsertionEffect(() => {
-    if (userInput) {
-      fetchData(userInput)
-        .then((data) => {
-          setApiData(data);
-        })
-        .catch((error) => {
-          console.error("Error Fetching data:", error);
-        });
-    }
-  }, [userInput]);
 
   return (
     <div>

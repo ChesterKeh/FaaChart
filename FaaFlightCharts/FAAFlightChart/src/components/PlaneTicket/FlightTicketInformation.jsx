@@ -30,21 +30,65 @@ export function FlightTicketInformation(props) {
 
   return (
     <>
-      <div id="planebox">
-        <div id="Planeticket">
-          <h4 className="ticket-id">{tempId}</h4>
-          <p className="airline-codes">{tempAirlineCodes}</p>
-          <p className="departure-time">{tempDepartureTime}</p>
-          <p className="duration">{tempDuration}</p>
-          <p className="departure-airport-code">{tempDepartureAirportCode}</p>
-          <p className="arrival-airport-code">{tempArrivalAirportCode}</p>
-          <p className="departure-date">{tempDepartureDate}</p>
-          <p className="arrival-date">{tempArrivalDate}</p>
+      {/* Depature */}
+      <div id="informationContainer">
+        <div id="depatureContainer">
+          <div className="location">
+            <span>Depature</span>
+          </div>
+          <div className="timing">
+            <div className="Scheduled">
+              <span>Scheduled</span>
+            </div>
+            <div className="estimated">
+              <span>Estimated</span>
+            </div>
+            <div className="actual">
+              <span>Actual</span>
+            </div>
+            <div className="runway">
+              <span>Runway</span>
+            </div>
+          </div>
+          <div className="terminal_gate">
+            <div className="terminal">
+              <span>Terminal</span>
+            </div>
+            <div className="gate">
+              <span>Gate</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Arrival */}
+        <div id="arrivalContainer">
+          <div className="location">
+            <span>Arrival</span>
+          </div>
+          <div className="timing">
+            <div className="Scheduled">
+              <span>Scheduled</span>
+            </div>
+            <div className="estimated">
+              <span>Estimated</span>
+            </div>
+            <div className="actual">
+              <span>Actual</span>
+            </div>
+            <div className="runway">
+              <span>Runway</span>
+            </div>
+          </div>
+          <div className="terminal_gate">
+            <div className="terminal">
+              <span>Terminal</span>
+            </div>
+            <div className="gate">
+              <span>Gate</span>
+            </div>
+          </div>
         </div>
       </div>
-      <p className="read-the-docs">
-        Welcome to get your FlightCharts & maybe out of date
-      </p>
     </>
   );
 }

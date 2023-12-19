@@ -35,6 +35,30 @@ export function InputBar({ onSearch }) {
     onSearch(userInput);
   };
 
+  //! Date by chatgpt
+  const generateDateOptions = () => {
+    const options = [];
+    const currentDate = new Date();
+    const endDate = new Date(currentDate.getTime() + 3 * 24 * 60 * 60 * 1000);
+
+    for (
+      let date = new Date(currentDate);
+      date <= endDate;
+      date.setDate(date.getDate() + 1)
+    ) {
+      options.push(
+        <option
+          key={date.toISOString().split("T")[0]}
+          value={date.toISOString().split("T")[0]}
+        >
+          {date.toISOString().split("T")[0]}
+        </option>
+      );
+    }
+
+    return options;
+  };
+
   return (
     <>
       <h1>Welcome to LazyPlane Tracker</h1>
@@ -59,19 +83,13 @@ export function InputBar({ onSearch }) {
         />
 
         {/* //! Date input by ChatGPT // */}
-        <input
-          type="date"
+        <select
           id="date"
-          placeholder="Date"
           value={date}
           onChange={handleDateChange}
-          min={new Date().toISOString().split("T")[0]}
-          max={
-            new Date(new Date().getTime() + 3 * 24 * 60 * 60 * 1000)
-              .toISOString()
-              .split("T")[0]
-          }
-        />
+        >
+          {generateDateOptions()}
+        </select>
         <button
           type="submit"
           onClick={handleSearch}
