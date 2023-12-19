@@ -52,10 +52,10 @@ export function FlightTicketInformation(props) {
           </div>
           <div className="terminal_gate">
             <div className="terminal">
-              <span>Terminal</span>
+              <span> Terminal </span>
             </div>
             <div className="gate">
-              <span>Gate</span>
+              <span> Gate </span>
             </div>
           </div>
         </div>

@@ -21,30 +21,19 @@ export function DepartureData({ userInput }) {
 
   const [apiData, setApiData] = useState(null);
 
-  let apiLimit = new URLSearchParams({
-    access_key: "11cf52b0e24e20b9f7df637f5692dfc4",
-    limit: 10,
-  });
-  const apiLink = "http://api.aviationstack.com/v1/flights?";
+  //   let apiLimit = new URLSearchParams({
+  //     access_key: "4a120c97de1aa4fe4b39008d0d76bb59",
+  //     limit: 15,
+  //   });
+  //   const apiLink = "http://api.aviationstack.com/v1/flights?";
 
-  console.log(apiLink); // Add this line to log the apiLink
+  //   console.log(apiLink); // Add this line to log the apiLink
 
-  useEffect(() => {
-    fetch(`http://api.aviationstack.com/v1/flights?${apiLimit}`)
-      .then((response) => response.json())
-      .then(console.log);
-  }, []);
+  //   useEffect(() => {
+  //     fetch(`http://api.aviationstack.com/v1/flights?${apiLimit}`)
+  //       .then((response) => response.json())
+  //       .then(console.log);
+  //   }, []);
 
-  return (
-    <div>
-      <h2>Depature</h2>
-      {apiData ? (
-        <div>
-          <p>Result:{apiData.result}</p>
-        </div>
-      ) : (
-        <p>No data available</p>
-      )}
-    </div>
-  );
+  return <div></div>;
 }

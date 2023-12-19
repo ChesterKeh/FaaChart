@@ -1,17 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Styling/InputBar.css";
 
 export function InputBar({ onSearch }) {
   const [airline, setAirline] = useState("");
-  const [airport, setAirport] = useState("");
+  const [flightNumber, setFlightNumber] = useState("");
   const [date, setDate] = useState("");
 
+  //!Fetching api //
+  let apiLimit = new URLSearchParams({
+    access_key: "4a120c97de1aa4fe4b39008d0d76bb59",
+    // limit: 15,
+  });
+  const apiLink = `http://api.aviationstack.com/v1/flights${apiLimit}`;
+
+  console.log(apiLink); // Add this line to log the apiLink
+
+  useEffect((value) => {
+    fetch(apiLink)
+      .then((response) => response.json())
+      .then((json) => {
+        const results = json.filter((user) => {
+          return (
+            value &&
+            user &&
+            user.name &&
+            user.name.toLowerCase().includes(value)
+          );
+        });
+        console.log(results);
+      }, []);
+  }, []);
+
+  //! -- Event handle change -- //
   const handleAirlineChange = (e) => {
     setAirline(e.target.value);
   };
 
-  const handleAirportChange = (e) => {
-    setAirport(e.target.value);
+  const handleFlightNumberChange = (e) => {
+    setFlightNumber(e.target.value);
   };
 
   const handleDateChange = (e) => {
@@ -28,12 +54,13 @@ export function InputBar({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Store the user input here
-    console.log(airline, airport, date);
+    console.log(airline, flightNumber, date);
   };
 
   const handleSearch = () => {
     onSearch(userInput);
   };
+  //! -- Event handle change -- //
 
   //! Date by chatgpt
   const generateDateOptions = () => {
@@ -78,8 +105,8 @@ export function InputBar({ onSearch }) {
           type="text"
           id="flight"
           placeholder="Flight Number (e.g SIA321)"
-          value={airport}
-          onChange={handleAirportChange}
+          value={flightNumber}
+          onChange={handleFlightNumberChange}
         />
 
         {/* //! Date input by ChatGPT // */}
