@@ -19,7 +19,7 @@ export function DepartureData({ userInput }) {
   //     actual_runway,
   //   } = props;
 
-  const [apiData, setApiData] = useState(null);
+  //   const [apiData, setApiData] = useState(null);
 
   //   let apiLimit = new URLSearchParams({
   //     access_key: "4a120c97de1aa4fe4b39008d0d76bb59",

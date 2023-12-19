@@ -2,34 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./Styling/InputBar.css";
 
 export function InputBar({ onSearch }) {
+  const [userInput, setUserInput] = useState("");
   const [airline, setAirline] = useState("");
   const [flightNumber, setFlightNumber] = useState("");
   const [date, setDate] = useState("");
 
   //!Fetching api //
-  let apiLimit = new URLSearchParams({
-    access_key: "4a120c97de1aa4fe4b39008d0d76bb59",
-    // limit: 15,
-  });
-  const apiLink = `http://api.aviationstack.com/v1/flights${apiLimit}`;
-
-  console.log(apiLink); // Add this line to log the apiLink
-
-  useEffect((value) => {
-    fetch(apiLink)
-      .then((response) => response.json())
-      .then((json) => {
-        const results = json.filter((user) => {
-          return (
-            value &&
-            user &&
-            user.name &&
-            user.name.toLowerCase().includes(value)
-          );
-        });
-        console.log(results);
-      }, []);
-  }, []);
 
   //! -- Event handle change -- //
   const handleAirlineChange = (e) => {
@@ -58,7 +36,7 @@ export function InputBar({ onSearch }) {
   };
 
   const handleSearch = () => {
-    onSearch(userInput);
+    onSearch(setUserInput);
   };
   //! -- Event handle change -- //
 
