@@ -1,0 +1,16 @@
+.input-wrapper {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    background-color: transparent;
+    color: black; // Change text color to black
+}
+
+input:focus {
+    outline: none;
+}
