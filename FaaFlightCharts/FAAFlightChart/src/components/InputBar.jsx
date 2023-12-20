@@ -100,7 +100,12 @@ export default function InputBar({ onSearch }) {
         </select>
 
         {/* Button to store information */}
-        <button type="submit">Search Flight</button>
+        <button
+          type="submit"
+          onClick={handleSearch}
+        >
+          Search Flight
+        </button>
       </form>
       <hr />
     </>
