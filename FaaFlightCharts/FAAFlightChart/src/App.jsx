@@ -5,22 +5,21 @@ import { FlightTicketInformation } from "./components/PlaneTicket/FlightTicketIn
 import { DepartureData } from "./components/DepartureData";
 import "./App.css";
 // import Temp from "./components/temp";
-import { SearchBar } from "./components/searchBar";
 
 function App() {
   const [userInput, setUserInput] = useState("");
 
-  const handleSearch = (input) => {
-    setUserInput(input);
+  const handleSearch = (searchInput) => {
+    setUserInput(searchInput);
   };
 
   return (
     <>
       {/* <Temp /> */}
       <InputBar onSearch={handleSearch} />
-      <FlightTicketInformation />
-      <DepartureData userInput={userInput} />
-      <SearchBar />
+      <FlightTicketInformation onSearch={handleSearch} />
+      <DepartureData />
+      {/* <SearchBar /> */}
     </>
   );
 }

@@ -36,9 +36,13 @@ export function InputBar({ onSearch }) {
   };
 
   const handleSearch = () => {
-    onSearch(setUserInput);
-  };
-  //! -- Event handle change -- //
+    if (airline !== "" && flightNumber !== "" && date !== ""  ) {
+      onSearch(setUserInput);
+    } else {
+      // Handle the case where not all information is filled
+      console.log("Please fill in all required information.");
+    }
+  }; //! -- Event handle change -- //
 
   //! Date by chatgpt
   const generateDateOptions = () => {

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { InputBar } from "./InputBar";
 
 export function DepartureData({ userInput }) {
   //   const {
@@ -19,21 +18,49 @@ export function DepartureData({ userInput }) {
   //     actual_runway,
   //   } = props;
 
-  //   const [apiData, setApiData] = useState(null);
+  let apiLimit = new URLSearchParams({
+    access_key: "4a120c97de1aa4fe4b39008d0d76bb59",
+    limit: 15,
+  });
+  const apiLink = "http://api.aviationstack.com/v1/flights?";
+  console.log(apiLink); // Add this line to log the apiLink
 
-  //   let apiLimit = new URLSearchParams({
-  //     access_key: "4a120c97de1aa4fe4b39008d0d76bb59",
-  //     limit: 15,
-  //   });
-  //   const apiLink = "http://api.aviationstack.com/v1/flights?";
+  const [airlines, setAirlines] = useState([]);
+  const [flights, setFlights] = useState([]);
 
-  //   console.log(apiLink); // Add this line to log the apiLink
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://api.aviationstack.com/v1/flights?${apiLimit}`
+        );
+        const result = await response.json();
 
-  //   useEffect(() => {
-  //     fetch(`http://api.aviationstack.com/v1/flights?${apiLimit}`)
-  //       .then((response) => response.json())
-  //       .then(console.log);
-  //   }, []);
+        // Extract airline and flight information
+        const extractedAirlines = result.data.map((flight) => flight.airline);
+        const extractedFlights = result.data.map((flight) => flight.flight);
 
-  return <div></div>;
+        setAirlines(extractedAirlines);
+        setFlights(extractedFlights);
+      } catch (error) {
+        console.error("Error fetching flight data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>Flight Information</h1>
+      <ul>
+        {flights.map((flight, index) => (
+          <li key={index}>
+            <p>Airline: {airlines[index]?.name}</p>
+            <p>Flight Number: {flight.number}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

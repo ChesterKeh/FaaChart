@@ -1,32 +1,25 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import "../Styling/DisplayInformation.css";
 
-export function FlightTicketInformation(props) {
-  const {
-    flight_date,
-    flight_status,
-    depature,
-    airport,
-    timezone,
-    icao,
-    terminal,
-    gate,
-    delay,
-    scheduled,
-    estimated,
-    actual,
-    estimated_runway,
-    actual_runway,
-  } = props;
+export function FlightTicketInformation({ onSearch }) {
+  // const userInput = onSearch;
+  // console.log(userInput);
 
-  const tempId = "ABC123";
-  const tempAirlineCodes = "SIA";
-  const tempDepartureTime = "12:00 PM";
-  const tempDuration = "2 hours";
-  const tempDepartureAirportCode = "JFK";
-  const tempArrivalAirportCode = "LAX";
-  const tempDepartureDate = "2022-01-01";
-  const tempArrivalDate = "2022-01-02";
+  // const [apiData, setApiData] = useState("");
+
+  // let apiLimit = new URLSearchParams({
+  //   access_key: "4a120c97de1aa4fe4b39008d0d76bb59",
+  //   limit: 15,
+  // });
+  // const apiLink = "http://api.aviationstack.com/v1/flights?";
+
+  // console.log(apiLink); // Add this line to log the apiLink
+
+  // useEffect(() => {
+  //   fetch(`http://api.aviationstack.com/v1/flights?${apiLimit}`)
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+  // }, []);
 
   return (
     <>
@@ -92,3 +85,19 @@ export function FlightTicketInformation(props) {
     </>
   );
 }
+// const {
+//   flight_date,
+//   flight_status,
+//   depature,
+//   airport,
+//   timezone,
+//   icao,
+//   terminal,
+//   gate,
+//   delay,
+//   scheduled,
+//   estimated,
+//   actual,
+//   estimated_runway,
+//   actual_runway,
+// } = props;
