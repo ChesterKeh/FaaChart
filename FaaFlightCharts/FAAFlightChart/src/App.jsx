@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import { InputBar } from "./components/InputBar";
-import { FlightTicketInformation } from "./components/PlaneTicket/FlightTicketInformation";
-import { DepartureData } from "./components/DepartureData";
 import "./App.css";
+import { DetailsComponent } from "./components/DetailsComponent";
+import { InputBar } from "./components/InputBar";
 // import Temp from "./components/temp";
 
 function App() {
   const [userInput, setUserInput] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (searchInput) => {
     setUserInput(searchInput);
@@ -15,11 +14,8 @@ function App() {
 
   return (
     <>
-      {/* <Temp /> */}
       <InputBar onSearch={handleSearch} />
-      <FlightTicketInformation onSearch={handleSearch} />
-      <DepartureData />
-      {/* <SearchBar /> */}
+      <DetailsComponent searchResults={searchResults} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function DepartureData({ userInput }) {
+export function DetailsComponent({ userInput }) {
   //   const {
   //     flight_date,
   //     flight_status,
@@ -27,6 +27,12 @@ export function DepartureData({ userInput }) {
 
   const [airlines, setAirlines] = useState([]);
   const [flights, setFlights] = useState([]);
+  const [departure, setDeparture] = useState([]);
+  const [schedule, setSchedule] = useState([]);
+  const [actual, setActual] = useState([]);
+  const [runway, setRunway] = useState([]);
+  const [terminal, setTerminal] = useState([]);
+  const [gate, setGate] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,9 +45,25 @@ export function DepartureData({ userInput }) {
         // Extract airline and flight information
         const extractedAirlines = result.data.map((flight) => flight.airline);
         const extractedFlights = result.data.map((flight) => flight.flight);
+        const extractedDeparture = result.data.map(
+          (flight) => flight.departure
+        );
+        const extractedSchedule = result.data.map((flight) => flight.scheduled);
+        const extractedActual = result.data.map((flight) => flight.actual);
+        const extractedRunway = result.data.map(
+          (flight) => flight.estimated_runway
+        );
+        const extractedTerminal = result.data.map((flight) => flight.terminal);
+        const extractedGate = result.data.map((flight) => flight.gate);
 
         setAirlines(extractedAirlines);
         setFlights(extractedFlights);
+        setDeparture(extractedDeparture);
+        setSchedule(extractedSchedule);
+        setActual(extractedActual);
+        setRunway(extractedRunway);
+        setTerminal(extractedTerminal);
+        setGate(extractedGate);
       } catch (error) {
         console.error("Error fetching flight data:", error);
       }
@@ -58,6 +80,12 @@ export function DepartureData({ userInput }) {
           <li key={index}>
             <p>Airline: {airlines[index]?.name}</p>
             <p>Flight Number: {flight.number}</p>
+            <p>Departure: {departure[index]?.iata}</p>
+            <p>Scheduled: {schedule[index]}</p>
+            <p>Actual: {actual[index]}</p>
+            <p>Runway: {runway[index]}</p>
+            <p>Terminal: {terminal[index]}</p>
+            <p>Gate: {gate[index]}</p>
           </li>
         ))}
       </ul>

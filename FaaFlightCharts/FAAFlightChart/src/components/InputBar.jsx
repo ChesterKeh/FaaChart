@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Styling/InputBar.css";
 
 export function InputBar({ onSearch }) {
-  const [userInput, setUserInput] = useState("");
   const [airline, setAirline] = useState("");
-  const [flightNumber, setFlightNumber] = useState("");
+  const [flight, setFlight] = useState("");
   const [date, setDate] = useState("");
 
   //!Fetching api //
@@ -14,8 +13,8 @@ export function InputBar({ onSearch }) {
     setAirline(e.target.value);
   };
 
-  const handleFlightNumberChange = (e) => {
-    setFlightNumber(e.target.value);
+  const handleflightChange = (e) => {
+    setFlight(e.target.value);
   };
 
   const handleDateChange = (e) => {
@@ -32,12 +31,12 @@ export function InputBar({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Store the user input here
-    console.log(airline, flightNumber, date);
+    console.log(airline, flight, date);
   };
 
   const handleSearch = () => {
-    if (airline !== "" && flightNumber !== "" && date !== ""  ) {
-      onSearch(setUserInput);
+    if (airline !== "" && flight !== "" && date !== "") {
+      onSearch({ airline, flight, date });
     } else {
       // Handle the case where not all information is filled
       console.log("Please fill in all required information.");
@@ -87,8 +86,8 @@ export function InputBar({ onSearch }) {
           type="text"
           id="flight"
           placeholder="Flight Number (e.g SIA321)"
-          value={flightNumber}
-          onChange={handleFlightNumberChange}
+          value={flight}
+          onChange={handleflightChange}
         />
 
         {/* //! Date input by ChatGPT // */}
