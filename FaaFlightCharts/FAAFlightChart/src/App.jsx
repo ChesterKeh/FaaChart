@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import FlightTracker from "./components/FlightTracker";
-// import Temp from "./components/temp";
 
 function App() {
-  const [userInput, setUserInput] = useState("");
-  const [onSearch, setOnSearch] = useState("");
-
   return (
-    <>
-      <FlightTracker />
-    </>
+    // <FlightTracker />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/FlightTracker"
+          element={<FlightTracker />}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
