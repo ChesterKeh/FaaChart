@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Styling/InputBar.css";
 
-export function InputBar({ onSearch }) {
+export default function InputBar({ onSearch }) {
   const [airline, setAirline] = useState("");
   const [flight, setFlight] = useState("");
   const [date, setDate] = useState("");
@@ -98,6 +98,8 @@ export function InputBar({ onSearch }) {
         >
           {generateDateOptions()}
         </select>
+
+        {/* Button to store information */}
         <button
           type="submit"
           onClick={handleSearch}
