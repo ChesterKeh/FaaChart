@@ -3,7 +3,7 @@ import { Routes, Route, Link, NavLink } from "react-router-dom";
 import "./App.css";
 import FlightTracker from "./components/FlightTracker";
 import About2 from "./pages/About2";
-import Homepage from "./pages/homepage";
+import Homepage from "./pages/Homepage";
 import SaveFlights from "./pages/SaveFlights";
 import SearchFlight from "./pages/SearchFlight";
 
