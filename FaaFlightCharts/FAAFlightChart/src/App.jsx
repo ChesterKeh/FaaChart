@@ -19,7 +19,7 @@ function App() {
         </Link>
         <NavLink
           to="About2"
-          className="nav-link"
+          className="-link"
         >
           About
         </NavLink>
