@@ -69,7 +69,7 @@ export default function InputBar({ onSearch }) {
 
   return (
     <>
-      <h1>Welcome to LazyPlane Tracker</h1>
+      <h1>Welcome to Flight Tracker</h1>
       <hr />
       <form
         action="text"

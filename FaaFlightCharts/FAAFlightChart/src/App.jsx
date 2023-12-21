@@ -5,17 +5,17 @@ import FlightTracker from "./components/FlightTracker";
 import About2 from "./pages/About2";
 import Homepage from "./pages/homepage";
 import SaveFlights from "./pages/SaveFlights";
+import SearchFlight from "./pages/SearchFlight";
 
 function App() {
   return (
     <header className="app-header">
       <nav className="app-nav">
-        <h1 className="app-title">TheLazyRocket </h1>
         <Link
           to="/"
           className="nav-link"
         >
-          Homepage
+          <h1 className="app-title">TheLazyRocket </h1>
         </Link>
         <NavLink
           to="About2"
@@ -24,10 +24,17 @@ function App() {
           About
         </NavLink>
         <NavLink
+          to="SearchFlight"
+          className="nav-link"
+        >
+          Search Flights
+        </NavLink>
+
+        <NavLink
           to="SaveFlights"
           className="nav-link"
         >
-          SaveFlights
+          Saved Flights
         </NavLink>
         <NavLink
           to="FlightTracker"
@@ -36,6 +43,7 @@ function App() {
           Flight Tracker
         </NavLink>
       </nav>
+      <hr />
 
       {/* <FlightTracker /> */}
       <main>
@@ -48,6 +56,11 @@ function App() {
             path="/FlightTracker"
             element={<FlightTracker />}
           />
+          <Route
+            path="/SearchFlight"
+            element={<SearchFlight />}
+          />
+
           <Route
             path="/About2"
             element={<About2 />}
