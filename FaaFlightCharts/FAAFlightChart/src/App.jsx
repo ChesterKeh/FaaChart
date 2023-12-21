@@ -9,7 +9,7 @@ function App() {
   return (
     <header className="app-header">
       <nav className="app-nav">
-        <h1 className="app-title">HomePage</h1>
+        <h1 className="app-title">TheLazyRocket </h1>
         <Link
           to="/"
           className="nav-link"
