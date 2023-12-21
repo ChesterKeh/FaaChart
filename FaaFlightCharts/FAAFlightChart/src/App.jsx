@@ -1,25 +1,36 @@
 import React from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 import "./App.css";
 import FlightTracker from "./components/FlightTracker";
-import About from "./pages/About";
+import About from "./pages/about";
+import Homepage from "./pages/homepage";
 
 function App() {
   return (
-    // <FlightTracker />
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/FlightTracker"
-          element={<FlightTracker />}
-        />
-
-        <Route
-          path="/About"
-          element={<About />}
-        />
-      </Routes>
-    </BrowserRouter>
+    <header>
+      <nav>
+        <h1>HomePage</h1>
+        <Link to="/">Homepage </Link>
+        <NavLink to="FlightTracker">Flight Tracker</NavLink>
+      </nav>
+      {/* <FlightTracker /> */}
+      <main>
+        <Routes>
+          <Route
+            index
+            element={<Homepage />}
+          />
+          <Route
+            path="/FlightTracker"
+            element={<FlightTracker />}
+          />
+          <Route
+            path="/About"
+            element={<About />}
+          />
+        </Routes>
+      </main>
+    </header>
   );
 }
 

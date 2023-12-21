@@ -1,3 +1,28 @@
+import React, { useEffect, useState } from "react";
+
+const SearchResults = ({ userInput, flightData }) => {
+  const [filteredFlights, setFilteredFlights] = useState([]);
+
+  useEffect(() => {
+    const filtered = flightData.filter(() => {});
+
+    setFilteredFlights(filtered);
+  }, [userInput, flightData]);
+
+  // Render the filtered flights
+  return (
+    <div>
+      {filteredFlights.map((flight, index) => (
+        <div key={index}>
+          <p>Airline: {flight.airline?.name}</p>
+          <p>Flight Number: {flight.flight.number}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default SearchResults;
 // import React, { useState, useEffect } from "react";
 
 // const SearchResults = ({ userInput, flightData }) => {
@@ -43,28 +68,3 @@
 
 // export default SearchResults;
 
-import React, { useEffect, useState } from "react";
-
-const SearchResults = ({ userInput, flightData }) => {
-  const [filteredFlights, setFilteredFlights] = useState([]);
-
-  useEffect(() => {
-    const filtered = flightData.filter(() => {});
-
-    setFilteredFlights(filtered);
-  }, [userInput, flightData]);
-
-  // Render the filtered flights
-  return (
-    <div>
-      {filteredFlights.map((flight, index) => (
-        <div key={index}>
-          <p>Airline: {flight.airline?.name}</p>
-          <p>Flight Number: {flight.flight.number}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default SearchResults;
