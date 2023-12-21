@@ -2,17 +2,34 @@ import React from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
 import "./App.css";
 import FlightTracker from "./components/FlightTracker";
-import About from "./pages/about";
+import About2 from "./pages/About2";
 import Homepage from "./pages/homepage";
 
 function App() {
   return (
-    <header>
-      <nav>
-        <h1>HomePage</h1>
-        <Link to="/">Homepage </Link>
-        <NavLink to="FlightTracker">Flight Tracker</NavLink>
+    <header className="app-header">
+      <nav className="app-nav">
+        <h1 className="app-title">HomePage</h1>
+        <Link
+          to="/"
+          className="nav-link"
+        >
+          Homepage
+        </Link>
+        <NavLink
+          to="About2"
+          className="nav-link"
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="FlightTracker"
+          className="nav-link"
+        >
+          Flight Tracker
+        </NavLink>
       </nav>
+
       {/* <FlightTracker /> */}
       <main>
         <Routes>
@@ -25,8 +42,8 @@ function App() {
             element={<FlightTracker />}
           />
           <Route
-            path="/About"
-            element={<About />}
+            path="/About2"
+            element={<About2 />}
           />
         </Routes>
       </main>

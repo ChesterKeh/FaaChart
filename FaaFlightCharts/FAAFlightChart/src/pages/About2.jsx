@@ -1,7 +1,7 @@
-export default function About() {
+export default function About2() {
   return (
     <>
-      <h1>Welcome to Flight Tracker</h1>
+      <h1>About Page</h1>
       <p>Using the flight tracker api</p>
     </>
   );
