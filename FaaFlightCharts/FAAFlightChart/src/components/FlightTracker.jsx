@@ -17,7 +17,7 @@ export default function FlightTracker() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://api.aviationstack.com/v1/flights?${apiLimit}`
+        `https://api.aviationstack.com/v1/flights?${apiLimit}`
       );
       const result = await response.json();
       setFlightData(result.data);
