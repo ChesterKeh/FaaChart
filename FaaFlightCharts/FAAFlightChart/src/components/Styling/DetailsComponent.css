@@ -24,10 +24,14 @@
 
 .DepatureFlights {
     display: flex;
+    flex: 1;
+    flex-wrap: nowrap;
+
 }
 
 .FlightCompareOutput {
     border: 1px solid black;
+
 
 }
 
