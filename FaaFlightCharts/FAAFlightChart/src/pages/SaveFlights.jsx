@@ -74,6 +74,9 @@ export default function SaveFlights() {
                 <strong>Flight Number:</strong>{" "}
                 {savedFlight.fields.FlightNumber}
               </p>
+              <p>
+                <strong>Date:</strong> {savedFlight.fields.date}
+              </p>
               <button onClick={() => removeFromSave(savedFlight)}>
                 Delete
               </button>

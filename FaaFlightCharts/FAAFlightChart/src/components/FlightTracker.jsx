@@ -42,11 +42,11 @@ export default function FlightTracker() {
   return (
     <>
       <div>
+        <InputBar onSearch={handleSearch} />
         <FlightCompare
           userInput={userInput}
           flightData={flightData}
         />
-        <InputBar onSearch={handleSearch} />
         <DetailsComponent flightData={flightData} />
       </div>
     </>

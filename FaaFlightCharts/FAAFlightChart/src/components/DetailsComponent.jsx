@@ -35,6 +35,7 @@ export function DetailsComponent({ flightData }) {
         fields: {
           Airline: flight.airline?.name || "", // Replace "" with a default value if needed
           FlightNumber: flight.flight?.number || "", // Replace "" with a default value if needed
+          date: flight.departure?.scheduled || "",
         },
       }),
     });

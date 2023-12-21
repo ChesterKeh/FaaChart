@@ -1,7 +1,3 @@
-export default function Homepage() {
-  return (
-    <>
-      <h1>Welcome to LazyPlane Tracker Homepage</h1>
-    </>
-  );
+export default function Homepage({ flightData }) {
+  return <div></div>;
 }
