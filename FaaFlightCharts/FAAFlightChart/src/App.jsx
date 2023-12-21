@@ -4,6 +4,7 @@ import "./App.css";
 import FlightTracker from "./components/FlightTracker";
 import About2 from "./pages/About2";
 import Homepage from "./pages/homepage";
+import SaveFlights from "./pages/SaveFlights";
 
 function App() {
   return (
@@ -21,6 +22,12 @@ function App() {
           className="nav-link"
         >
           About
+        </NavLink>
+        <NavLink
+          to="SaveFlights"
+          className="nav-link"
+        >
+          SaveFlights
         </NavLink>
         <NavLink
           to="FlightTracker"
@@ -44,6 +51,11 @@ function App() {
           <Route
             path="/About2"
             element={<About2 />}
+          />
+
+          <Route
+            path="/SaveFlights"
+            element={<SaveFlights />}
           />
         </Routes>
       </main>

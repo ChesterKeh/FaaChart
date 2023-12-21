@@ -32,15 +32,32 @@ export function DetailsComponent({ flightData }) {
           <div className="FlightDetailsContainer">
             <ul>
               {flightData.map((flight, index) => (
-                <li key={index}>
-                  <h3>Departure</h3>
-                  <hr />
-                  <p>Airline: {flight.airline?.name}</p>
-                  <p>Flight Number: {flight.flight.number}</p>
-                  <p>Airport: {flight.departure?.airport}</p>
-                  <p>Departure: {flight.departure?.iata}</p>
-                  <p>Scheduled: {flight.departure?.scheduled}</p>
-                </li>
+                <div className="FlightContainer">
+                  <li key={index}>
+                    <div className="DepatureFlights">
+                      <h3>Departure</h3>
+                      <hr />
+                      <p>Airline: {flight.airline?.name}</p>
+                      <p>Flight Number: {flight.flight.number}</p>
+                      <p>Airport: {flight.departure?.airport}</p>
+                      <p>Departure: {flight.departure?.iata}</p>
+                      <p>
+                        Scheduled:
+                        <br /> {flight.departure?.scheduled}
+                      </p>
+                    </div>
+                    <hr />
+                    <div className="ArrivalFlights">
+                      <h3>Arrival </h3>
+                      <hr />
+                      <p>Airline: {flight.airline?.name}</p>
+                      <p>Flight Number: {flight.flight.number}</p>
+                      <p>Airport: {flight.arrival?.airport}</p>
+                      <p>Arrival: {flight.arrival?.iata}</p>
+                      <p>Scheduled: {flight.arrival?.scheduled}</p>
+                    </div>
+                  </li>
+                </div>
               ))}
             </ul>
           </div>

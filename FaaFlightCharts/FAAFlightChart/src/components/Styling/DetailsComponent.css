@@ -1,9 +1,41 @@
 .FlightDetailsContainer {
-    background-color: white;
     color: black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     text-align: left;
     /* Add this line to align the text */
+    border-radius: 1px;
+}
+
+.FlightContainer {
+    display: flex;
+    border: 1px solid black;
+    text-align: center;
+    padding-right: 3%;
+}
+
+.DepatureFlights,
+.ArrivalFlights {
+    display: flex;
+    flex: 1;
+    flex-wrap: nowrap;
+}
+
+.DepatureFlights {
+    display: flex;
+}
+
+.FlightCompareOutput {
+    border: 1px solid black;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+h3 {
+    padding-left: 50px;
+    padding-right: 50px;
 }
