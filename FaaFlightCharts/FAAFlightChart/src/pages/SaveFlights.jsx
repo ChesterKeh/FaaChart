@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../components/Styling/SaveFlights.css";
 
 export default function SaveFlights() {
   const [savedFlights, setSavedFlights] = useState([]);
@@ -34,6 +35,29 @@ export default function SaveFlights() {
     fetchSavedFlights();
   }, []);
 
+  const removeFromSave = async (savedFlight) => {
+    const response = await fetch(`${url}/${savedFlight.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      console.error(
+        "Error removing from save:",
+        response.status,
+        response.statusText
+      );
+    } else {
+      // If deletion is successful, update the saved flights state
+      setSavedFlights((prevSavedFlights) =>
+        prevSavedFlights.filter((flight) => flight.id !== savedFlight.id)
+      );
+    }
+  };
+
   return (
     <div className="SavedFlightsContainer">
       <h1>Saved Flights</h1>
@@ -50,6 +74,9 @@ export default function SaveFlights() {
                 <strong>Flight Number:</strong>{" "}
                 {savedFlight.fields.FlightNumber}
               </p>
+              <button onClick={() => removeFromSave(savedFlight)}>
+                Delete
+              </button>
             </li>
           ))}
         </ul>
