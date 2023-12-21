@@ -75,25 +75,3 @@ export default function FlightCompare({ userInput, flightData }) {
     </div>
   );
 }
-//   const compareFlights = () => {
-// Temporary hardcoded values for testing
-//     const testUserInput = {
-//       airline: "Virgin Atlantic",
-//       flight: "8480",
-//     };
-
-//     console.log("User Input (Temporary):", testUserInput);
-//     console.log("Original Flight Data:", flightData);
-
-//     const matchedFlights = flightData.filter((flight) => {
-//       return (
-//         flight.airline?.name === testUserInput.airline &&
-//         flight.flight?.number === testUserInput.flight
-//       );
-//     });
-
-//     // Log the matched flights to the console
-//     console.log("Matched Flights:", matchedFlights);
-
-//     return matchedFlights;
-//   };

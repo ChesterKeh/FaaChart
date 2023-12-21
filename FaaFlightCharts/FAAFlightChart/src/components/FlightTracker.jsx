@@ -11,7 +11,7 @@ export default function FlightTracker() {
   //!API Section //
   const apiLimit = new URLSearchParams({
     access_key: "4a120c97de1aa4fe4b39008d0d76bb59",
-    // limit: 4,
+    limit: 10,
   });
 
   const fetchData = async () => {

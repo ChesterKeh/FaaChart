@@ -19,6 +19,34 @@ export function DetailsComponent({ flightData }) {
     }));
   };
 
+  const token =
+    "patTvUzdUJ2NAazjE.73450dd0809ae9b13031466645839cc73f38954411a1de2c9c88f82e2839e291";
+  const url = "https://api.airtable.com/v0/appC6QkMUSDhFdLlq/SavedFlights";
+  const [flight, setGame] = useState(null);
+
+  const handleAddtoSave = async (flight) => {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        fields: {
+          Airline: flight.airline?.name || "", // Replace "" with a default value if needed
+          FlightNumber: flight.flight?.number || "", // Replace "" with a default value if needed
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      console.error(
+        "Error adding to save:",
+        response.status,
+        response.statusText
+      );
+    }
+  };
   return (
     <>
       <h1>Flight Information</h1>
@@ -57,6 +85,11 @@ export function DetailsComponent({ flightData }) {
                       <p>Scheduled: {flight.arrival?.scheduled}</p>
                     </div>
                   </li>
+                  <div>
+                    <button onClick={() => handleAddtoSave(flight)}>
+                      Save
+                    </button>
+                  </div>
                 </div>
               ))}
             </ul>
