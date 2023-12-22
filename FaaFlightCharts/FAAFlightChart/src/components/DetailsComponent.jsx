@@ -22,7 +22,6 @@ export function DetailsComponent({ flightData }) {
   const token =
     "patTvUzdUJ2NAazjE.73450dd0809ae9b13031466645839cc73f38954411a1de2c9c88f82e2839e291";
   const url = "https://api.airtable.com/v0/appC6QkMUSDhFdLlq/SavedFlights";
-  const [flight, setGame] = useState(null);
 
   const handleAddtoSave = async (flight) => {
     const response = await fetch(url, {
