@@ -78,6 +78,10 @@ export function DetailsComponent({ flightData }) {
                       <hr />
                       <p>Airline: {flight.airline?.name}</p>
                       <p>Flight Number: {flight.flight.number}</p>
+                      <p>
+                        Scheduled:
+                        <br /> {flight.arrival?.scheduled}
+                      </p>
                     </div>
                   </li>
                   <div>
