@@ -10,7 +10,6 @@ This a flight Tracker app using https://aviationstack.com/ API.
 - JavaScript
 - HTML
 - CSS
-- Bootstrap
 
  ## App Roadmap
 - Display more Flight information details Aircraft type, Terminal, Gate and etc.
