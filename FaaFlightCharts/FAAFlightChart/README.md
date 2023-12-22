@@ -14,3 +14,11 @@ Acceptance Criteria:
 - The application should provide options for users to view and manage their booked flights, including the ability to make changes or cancellations if necessary.
 - The application should have a responsive design that works well on different devices, such as desktops, tablets, and smartphones.
 - The application should provide customer support or assistance options in case users encounter any issues or have questions during the ticket buying process.
+
+
+
+## Next steps
+
+- Add more flight information
+- Improve on CSS styling
+- Personalise it through logins

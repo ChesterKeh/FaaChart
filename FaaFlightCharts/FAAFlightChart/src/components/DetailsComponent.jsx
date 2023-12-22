@@ -68,8 +68,6 @@ export function DetailsComponent({ flightData }) {
                       <hr />
                       <p>Airline: {flight.airline?.name}</p>
                       <p>Flight Number: {flight.flight.number}</p>
-                      <p>Airport: {flight.departure?.airport}</p>
-                      <p>Departure: {flight.departure?.iata}</p>
                       <p>
                         Scheduled:
                         <br /> {flight.departure?.scheduled}
@@ -81,9 +79,6 @@ export function DetailsComponent({ flightData }) {
                       <hr />
                       <p>Airline: {flight.airline?.name}</p>
                       <p>Flight Number: {flight.flight.number}</p>
-                      <p>Airport: {flight.arrival?.airport}</p>
-                      <p>Arrival: {flight.arrival?.iata}</p>
-                      <p>Scheduled: {flight.arrival?.scheduled}</p>
                     </div>
                   </li>
                   <div>
